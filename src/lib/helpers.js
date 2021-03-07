@@ -27,5 +27,6 @@ export const parseData = (dataObject, frequency) => {
 export const parseCurrency = (rate) =>
   rate.slice(0, rate.indexOf(".")).replace(",", "");
 
-export const formatResult = (invest, wallet, value, rate) =>
-  `Investing : ${invest} dollars; Wallet : ${wallet} BTC; Value : ${value} dollars; Rate : ${rate}%`;
+export const calculRate = (x, y) => ((y / x) * 10).toFixed(2);
+export const formatResult = (wallet, value, rate) =>
+  `Wallet : ${wallet} BTC; Value : ${value} USD; Rate : ${rate}%`;

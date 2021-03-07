@@ -2,7 +2,12 @@ import "./styles.css";
 import { getCurrent, getData } from "./lib/api.js";
 import { visualize } from "./lib/visualizer";
 import { simulate } from "./lib/simulator";
-import { parseData, parseCurrency, formatResult } from "./lib/helpers";
+import {
+  parseData,
+  parseCurrency,
+  formatResult,
+  calculRate
+} from "./lib/helpers";
 import {
   startInput,
   endInput,
@@ -22,7 +27,11 @@ const init = async () => {
   const wallet = simulate(data, amount);
   const currentPrice = parseCurrency(await getCurrent());
   const total = (wallet * currentPrice).toFixed(2);
-  resultElement.innerText = formatResult(amount, wallet, total, 10);
+  resultElement.innerText = formatResult(
+    wallet,
+    total,
+    calculRate(amount, total)
+  );
 };
 
 init();
