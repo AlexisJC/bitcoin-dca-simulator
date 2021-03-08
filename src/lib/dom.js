@@ -3,4 +3,7 @@ export const endInput = document.getElementById("end");
 export const frequencyInput = document.getElementById("frequency");
 export const amountInput = document.getElementById("amount");
 export const simulateBtn = document.getElementById("simulate");
+export const retryBtn = document.getElementById("retry");
 export const resultElement = document.getElementById("result");
+export const formSection = document.getElementById("form-section");
+export const resultSection = document.getElementById("result-section");

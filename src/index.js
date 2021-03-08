@@ -14,30 +14,40 @@ import {
   frequencyInput,
   resultElement,
   amountInput,
-  simulateBtn
+  simulateBtn,
+  formSection,
+  resultSection,
+  retryBtn
 } from "./lib/dom";
 
 let viz = null;
 
-const init = async () => {
-  const amount = amountInput.value;
+const exec = async () => {
   const dataObject = await getData(startInput.value, endInput.value);
   const data = parseData(dataObject, frequencyInput.value);
   viz = visualize(data);
-  const wallet = simulate(data, amount);
+  const wallet = simulate(data, amountInput.value);
   const currentPrice = parseCurrency(await getCurrent());
   const total = (wallet * currentPrice).toFixed(2);
   resultElement.innerText = formatResult(
     wallet,
     total,
-    calculRate(amount, total)
+    calculRate(amountInput.value, total)
   );
 };
 
-init();
-
 simulateBtn.onclick = (e) => {
   e.preventDefault();
-  viz.destroy();
-  init();
+  resultSection.style.display = "block";
+  formSection.style.display = "none";
+  viz && viz.destroy();
+  exec();
+};
+
+retryBtn.onclick = (e) => {
+  e.preventDefault();
+  resultSection.style.display = "none";
+  formSection.style.display = "block";
+  viz && viz.destroy();
+  exec();
 };

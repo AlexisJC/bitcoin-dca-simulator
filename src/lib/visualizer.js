@@ -22,10 +22,12 @@ export const visualize = (data) => {
         {
           label: "Bitcoin",
           data: prices,
-          backgroundColor: "#F7931A",
-          borderColor: colors,
+          backgroundColor: "#F9B766",
+          borderColor: "#F7931A",
           borderWidth: 1,
-          pointStyle: "triangle"
+          pointStyle: "triangle",
+          pointBackgroundColor: colors,
+          pointBorderColor: colors
         }
       ]
     },
