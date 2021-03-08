@@ -7,3 +7,6 @@ export const retryBtn = document.getElementById("retry");
 export const resultElement = document.getElementById("result");
 export const formSection = document.getElementById("form-section");
 export const resultSection = document.getElementById("result-section");
+export const walletElement = document.getElementById("result-wallet");
+export const valueElement = document.getElementById("result-value");
+export const rateElement = document.getElementById("result-rate");

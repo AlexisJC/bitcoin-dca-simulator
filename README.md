@@ -8,13 +8,16 @@ TODO
 [x] Build a simple simulator  
 [x] Add minimal style  
 [] Improve UX/UI  
- [] Show/Hide form and results  
- [] Align vertically the form  
+ [x] Show/Hide form and results  
+ [x] Align vertically the form  
  [] Display results as cards  
  [] Add icons  
- [] Add style on inputs  
+ [x] Add style on inputs  
  [] Add animations on loading  
  [] Add transitions  
+[x] Improve chart  
+ [x] Remove axes  
+ [x] Better colors  
 [] Add footer  
  [] Github  
  [] API license

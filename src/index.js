@@ -17,7 +17,10 @@ import {
   simulateBtn,
   formSection,
   resultSection,
-  retryBtn
+  retryBtn,
+  walletElement,
+  valueElement,
+  rateElement
 } from "./lib/dom";
 
 let viz = null;
@@ -29,11 +32,9 @@ const exec = async () => {
   const wallet = simulate(data, amountInput.value);
   const currentPrice = parseCurrency(await getCurrent());
   const total = (wallet * currentPrice).toFixed(2);
-  resultElement.innerText = formatResult(
-    wallet,
-    total,
-    calculRate(amountInput.value, total)
-  );
+  walletElement.innerText = wallet + " BTC";
+  valueElement.innerText = total + " $";
+  rateElement.innerText = "+" + calculRate(amountInput.value, total) + " %";
 };
 
 simulateBtn.onclick = (e) => {

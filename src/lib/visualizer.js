@@ -11,7 +11,9 @@ export const visualize = (data) => {
 
   const dates = analyzedData.map((entry) => entry.date);
   const prices = analyzedData.map((entry) => entry.price);
-  const colors = analyzedData.map((entry) => (entry.isUp ? "green" : "red"));
+  const colors = analyzedData.map((entry) =>
+    entry.isUp ? "#83E8BA" : "#504136"
+  );
 
   const ctx = document.getElementById("myChart").getContext("2d");
   return new Chart(ctx, {
@@ -32,9 +34,20 @@ export const visualize = (data) => {
       ]
     },
     options: {
+      legend: { display: false },
       scales: {
+        display: false,
+        xAxes: [
+          {
+            display: false,
+            ticks: {
+              beginAtZero: false
+            }
+          }
+        ],
         yAxes: [
           {
+            display: false,
             ticks: {
               beginAtZero: false
             }
