@@ -1,4 +1,3 @@
-import "./styles.css";
 import { getCurrent, getData } from "./lib/api.js";
 import { visualize } from "./lib/visualizer";
 import { simulate } from "./lib/simulator";
