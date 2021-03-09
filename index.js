@@ -2,17 +2,11 @@ import "./styles.css";
 import { getCurrent, getData } from "./lib/api";
 import { visualize } from "./lib/visualizer";
 import { simulate } from "./lib/simulator";
-import {
-  parseData,
-  parseCurrency,
-  formatResult,
-  calculRate
-} from "./lib/helpers";
+import { parseData, parseCurrency, calculRate } from "./lib/helpers";
 import {
   startInput,
   endInput,
   frequencyInput,
-  resultElement,
   amountInput,
   simulateBtn,
   formSection,
