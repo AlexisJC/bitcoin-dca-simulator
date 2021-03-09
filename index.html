@@ -3,11 +3,13 @@
   <head>
     <title>Bitcoin DCA Simulator</title>
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
 
   <body>
     <header>
-      <h1>Bitcoin DCA Simulator</h1>
+      <img src="bitcoin.png" width="100px" />
+      <h1>Investing Simulator</h1>
       <h3>All roads lead to the moon</h3>
     </header>
 
@@ -57,7 +59,7 @@
             </select>
           </li>
           <li>
-            <button id="simulate" class="action-btn">Simulate</button>
+            <button id="simulate" class="action-btn">Simulate DCA</button>
           </li>
         </ul>
       </form>
@@ -66,20 +68,23 @@
     <section id="result-section">
       <ul class="flex-list">
         <li class="result-indicator">
-          <b>Wallet : </b> <span id="result-wallet" class="result-span"></span>
+          <span>Wallet :</span>
+          <span id="result-wallet" class="result-span"></span>
         </li>
         <li class="result-indicator">
-          <b>Value : </b> <span id="result-value" class="result-span"></span>
+          <span>Value :</span>
+          <span id="result-value" class="result-span"></span>
         </li>
         <li class="result-indicator">
-          <b>Rate : </b> <span id="result-rate" class="result-span"></span>
+          <span>Rate :</span>
+          <span id="result-rate" class="result-span"></span>
         </li>
         <li>
           <button id="retry" class="action-btn">Reset</button>
         </li>
       </ul>
 
-      <canvas id="myChart" max-height="600"></canvas>
+      <canvas id="myChart" max-height="500"></canvas>
     </section>
 
     <script src="src/index.js"></script>

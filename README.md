@@ -10,8 +10,7 @@ TODO
 [] Improve UX/UI  
  [x] Show/Hide form and results  
  [x] Align vertically the form  
- [] Display results as cards  
- [] Add icons  
+ [x] Display nice results  
  [x] Add style on inputs  
  [] Add animations on loading  
  [] Add transitions  
