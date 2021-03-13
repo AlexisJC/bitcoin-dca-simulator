@@ -1,22 +1,7 @@
 # bitcoin-dca-simulator
 
-Created with CodeSandbox
+A simple way to estimate and compare different investment strategies based on DCA.
 
-TODO  
-[x] Add the API  
-[x] Build a simple chart on top  
-[x] Build a simple simulator  
-[x] Add minimal style  
-[] Improve UX/UI  
- [x] Show/Hide form and results  
- [x] Align vertically the form  
- [x] Display nice results  
- [x] Add style on inputs  
- [] Add animations on loading  
- [] Add transitions  
-[x] Improve chart  
- [x] Remove axes  
- [x] Better colors  
-[] Add footer  
- [] Github  
- [] API license
+Choose a period with start/end dates and the amount you would like to invest on the period. Then, let the simulator give you the result you would have got today.
+
+It use CoinDesk API to get bitcoin price data and chart.js to render the result trend chart.

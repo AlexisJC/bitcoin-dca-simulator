@@ -1,4 +1,4 @@
-import "./styles.css";
+import "/assets/styles.css";
 import { getCurrentPrice, getDataByPeriod } from "./lib/api";
 import { visualize } from "./lib/visualizer";
 import { simulate } from "./lib/simulator";

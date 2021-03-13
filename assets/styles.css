@@ -5,6 +5,11 @@ html {
 
 body {
   background-color: antiquewhite;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 h1 {
@@ -14,7 +19,7 @@ h1 {
 
 header {
   text-align: center;
-  margin-top: 30px;
+  margin-top: 40px;
   margin-bottom: 30px;
 }
 
@@ -22,13 +27,15 @@ header {
   display: none;
   width: 100%;
   max-width: 800px;
-  margin: 10px auto;
+  margin: 0 auto;
+  flex: 1 0 auto;
 }
 
 #form-section {
   width: 100%;
   max-width: 800px;
   margin: 0 auto;
+  flex: 1 0 auto;
 }
 
 .flex-list {
@@ -71,4 +78,16 @@ input {
 
 .result-span {
   margin-left: 5px;
+}
+
+#myChart {
+  margin: auto;
+  max-width: 90%;
+  margin-bottom: 10px;
+}
+
+footer {
+  flex-shrink: 0;
+  text-align: center;
+  padding-bottom: 10px;
 }
