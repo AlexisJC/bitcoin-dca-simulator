@@ -1,48 +1,47 @@
 import "./styles.css";
-import { getCurrent, getData } from "./lib/api";
+import { getCurrentPrice, getDataByPeriod } from "./lib/api";
 import { visualize } from "./lib/visualizer";
 import { simulate } from "./lib/simulator";
 import { parseData, parseCurrency, calculRate } from "./lib/helpers";
-import {
-  startInput,
-  endInput,
-  frequencyInput,
-  amountInput,
-  simulateBtn,
-  formSection,
-  resultSection,
-  retryBtn,
-  walletElement,
-  valueElement,
-  rateElement
-} from "./lib/dom";
+import DOM from "./lib/dom";
 
 let viz = null;
 
 const exec = async () => {
-  const dataObject = await getData(startInput.value, endInput.value);
-  const data = parseData(dataObject, frequencyInput.value);
+  // api calls
+  const rawData = await getDataByPeriod(
+    DOM.startInput.value,
+    DOM.endInput.value
+  );
+  const rawPrice = await getCurrentPrice();
+
+  // parse raw
+  const data = parseData(rawData, DOM.frequencyInput.value);
+  const currentPrice = parseCurrency(rawPrice);
+
+  // load dataviz
   viz = visualize(data);
-  const wallet = simulate(data, amountInput.value);
-  const currentPrice = parseCurrency(await getCurrent());
+
+  // perform calculations
+  const wallet = simulate(data, DOM.amountInput.value);
   const total = (wallet * currentPrice).toFixed(2);
-  walletElement.innerText = wallet + " BTC";
-  valueElement.innerText = total + " $";
-  rateElement.innerText = "+" + calculRate(amountInput.value, total) + " %";
+  const rate = calculRate(DOM.amountInput.value, total);
+
+  DOM.displayResult(wallet, total, rate);
 };
 
-simulateBtn.onclick = (e) => {
+DOM.simulateBtn.onclick = (e) => {
   e.preventDefault();
-  resultSection.style.display = "block";
-  formSection.style.display = "none";
+  DOM.resultSection.style.display = "block";
+  DOM.formSection.style.display = "none";
   viz && viz.destroy();
   exec();
 };
 
-retryBtn.onclick = (e) => {
+DOM.retryBtn.onclick = (e) => {
   e.preventDefault();
-  resultSection.style.display = "none";
-  formSection.style.display = "block";
+  DOM.resultSection.style.display = "none";
+  DOM.formSection.style.display = "block";
   viz && viz.destroy();
   exec();
 };

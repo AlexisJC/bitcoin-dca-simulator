@@ -1,7 +1,7 @@
 {
-  "name": "btc-investing-simulator",
+  "name": "bitcoin-dca-simulator",
   "version": "1.0.0",
-  "description": "A project to simulate simple DCA investing in BTC",
+  "description": "A very minimalist web app to simulate some investing strategies",
   "main": "index.html",
   "scripts": {
     "start": "vite serve",
@@ -14,5 +14,5 @@
   "devDependencies": {
     "vite": "2.0.5"
   },
-  "keywords": ["javascript", "starter"]
+  "keywords": []
 }
